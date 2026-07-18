@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de" id="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA Bowl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="language.js" defer></script>
+    <script src="products-dynamic.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+<div id="loader">
+    <div class="loader-logo">
+        MA Bowl
+    </div>
+
+    <div class="loader-bar">
+        <div class="loader-progress"></div>
+    </div>
+</div>
+    <!-- HEADER -->
+    <header>
+  <nav class="navbar">
+
+        <a href="#" class="logo">
+            <img src="image/logo2.png" alt="MA Bowl Logo">
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home" data-i18n="nav_home">Startseite</a></li>
+            <li><a href="#products" data-i18n="nav_menu">Menü</a></li>
+            <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+            <li><a href="#about" data-i18n="nav_about">Über uns</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Kontakt</a></li>
+        </ul>
+
+        <div class="language-selector">
+
+    <button class="order-btn" id="languageBtn">
+        <span class="lang-flag">🇩🇪</span><span class="lang-label"> Deutsch</span><span class="lang-caret"> ▼</span>
+    </button>
+
+    <div id="languageMenu" class="language-menu">
+
+        <button data-lang="de">🇩🇪 Deutsch</button>
+
+        <button data-lang="en">🇬🇧 English</button>
+
+        <button data-lang="ar">🇸🇦 العربية</button>
+
+        <button data-lang="fr">🇫🇷 Français</button>
+
+        <button data-lang="zh">🇨🇳 中文</button>
+
+        <button data-lang="es">🇪🇸 Español</button>
+
+        <button data-lang="ru">🇷🇺 Русский</button>
+
+    </div>
+
+</div>
+
+    </nav>
+    </header>
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="hero-tag" data-i18n="hero_tag">
+             Frische Açaí Bowls
+        </span>
+
+        <h1>
+            <span data-i18n="hero_title1">Gesunde Energie</span>
+            <span data-i18n="hero_title2">In jeder Bowl</span>
+        </h1>
+
+        <p data-i18n="hero_desc">
+           Bei MA Bowl bieten wir köstliche, hausgemachte Açaí Bowls aus Gronau an. Wähle aus unseren fünf Signature Bowls oder gestalte deine eigene Bowl mit frischem Obst und Toppings.
+        </p>
+
+        <div class="hero-buttons">
+           
+
+            <a href="#products" class="btn-outline" data-i18n="hero_btn">
+                Zum Menü
+            </a>
+        </div>
+
+        <div class="hero-stats">
+
+            <div>
+                <h3>700+</h3>
+                <span data-i18n="stat_followers">Follower</span>
+            </div>
+
+            <div>
+                <h3>4+</h3>
+                <span data-i18n="stat_bowls">Signature Bowls</span>
+            </div>
+
+            <div>
+                <h3>100%</h3>
+                <span data-i18n="stat_fresh">Frisch</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="image/page-g.gif" alt="Acai Bowl">
+    </div>
+
+</section>
+  
+
+    <!-- PRODUCTS SECTION -->
+<section class="products" id="products">
+
+    <div class="products-header">
+
+        <span class="section-tag" data-i18n="products_tag">
+            Signature Bowls
+        </span>
+
+        <h2 data-i18n="products_title">
+            Wähle deinen Lieblingsgeschmack
+        </h2>
+
+        <p class="swipe-hint">
+            <span class="swipe-hint-arrow">→</span>
+            <span data-i18n="swipe_hint">Wische, um weitere Bowls zu sehen</span>
+        </p>
+
+    </div>
+
+    <div id="productsDynamicRoot" class="products-dynamic-root">
+        <p class="products-loading" data-i18n="products_loading">Produkte werden geladen…</p>
+    </div>
+
+</section>
+<!-- STATEMENT SECTION -->
+<section class="statement">
+
+    <div class="statement-content">
+
+        <span data-i18n="statement_tag">
+            MA Bowl Erlebnis
+        </span>
+
+        <h2 data-i18n="statement_line1">
+            Frisch zubereitet.
+        </h2>
+
+        <h2 data-i18n="statement_line2">
+            Schön serviert.
+        </h2>
+
+    </div>
+
+</section>
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+
+    <div class="about-overlay"></div>
+
+    <div class="about-content">
+
+        <span class="section-tag" data-i18n="about_tag">
+            Warum MA Bowl
+        </span>
+
+        <h2 data-i18n="about_title">
+            Mehr als nur
+            Açaí Bowls
+        </h2>
+
+        <p data-i18n="about_desc">
+            Jede Bowl wird mit erstklassigen Zutaten, frischem
+            Obst und sorgfältig ausgewählten Toppings zubereitet,
+            um dir das perfekte Erlebnis zu bieten.
+        </p>
+
+        <div class="about-features">
+
+            <div class="feature" data-i18n="feature1">
+                Frische Zutaten
+            </div>
+
+            <div class="feature" data-i18n="feature2">
+                Premium-Qualität
+            </div>
+
+            <div class="feature" data-i18n="feature3">
+                Einzigartiges Erlebnis
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+               <h3 class="counter" data-target="700">0</h3>
+                <span data-i18n="stat_customers">Kunden</span>
+            </div>
+
+            <div class="stat">
+                <h3 class="counter" data-target="4">0</h3>
+                <span data-i18n="stat_bowls">Signature Bowls</span>
+            </div>
+
+            <div class="stat">
+                <h3 class="counter percent" data-target="100">0</h3>
+                <span data-i18n="stat_fresh">Frisch</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="testimonials" id="testimonials">
+
+    <div class="testimonials-header">
+
+        <span class="section-tag" data-i18n="reviews_tag">
+            Kundenbewertungen
+        </span>
+
+        <h2 data-i18n="reviews_title">
+            Was unsere Kunden sagen
+        </h2>
+
+    </div>
+<!-- TESTIMONIALS GRID -->
+    <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p data-i18n="review1">
+                Die beste Açaí Bowl, die ich je probiert habe.
+                Frische Zutaten und ein fantastischer Geschmack.
+            </p>
+
+            <h4>
+                Sarah M.
+            </h4>
+
+        </div>
+
+        <div class="testimonial-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p data-i18n="review2">
+                Perfekte Balance zwischen Früchten und Toppings.
+                Ich komme auf jeden Fall wieder.
+            </p>
+
+            <h4>
+                Adam K.
+            </h4>
+
+        </div>
+
+        <div class="testimonial-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p data-i18n="review3">
+                Wunderschöne Präsentation und Premium-Qualität.
+                Sehr empfehlenswert.
+            </p>
+
+            <h4>
+                Lina R.
+            </h4>
+
+        </div>
+
+    </div>
+
+</section>
+   <!-- GALLERY SECTION -->
+<section class="gallery" id="gallery">
+
+    <div class="gallery-row">
+
+        <div class="gallery-track row-1">
+
+            <div class="gallery-item"><img src="image/g1.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g2.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g3.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g4.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g5.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g6.png" alt=""></div>
+
+            <!-- تكرار -->
+
+            <div class="gallery-item"><img src="image/g1.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g2.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g3.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g4.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g5.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g6.png" alt=""></div>
+
+        </div>
+
+    </div>
+
+    <div class="gallery-row">
+
+        <div class="gallery-track row-2">
+
+            <div class="gallery-item"><img src="image/g1-.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g7.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g8.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g9.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g10.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g11.png" alt=""></div>
+
+            <!-- تكرار -->
+
+            <div class="gallery-item"><img src="image/g1-.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g7.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g8.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g9.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g10.png" alt=""></div>
+            <div class="gallery-item"><img src="image/g11.png" alt=""></div>
+
+        </div>
+
+    </div>
+
+</section>
+</section>
+
+<!-- LOCATION SECTION -->
+<section class="location" id="location">
+
+    <div class="location-header">
+
+        <span class="section-tag" data-i18n="location_tag">
+            Standort
+        </span>
+
+        <h2 data-i18n="location_title">
+            Besuche MA Bowl
+        </h2>
+
+    </div>
+
+    <div class="map-container">
+
+        <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94690.65690956921!2d6.876497268676767!3d52.18414211511331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b83fb1775158fd%3A0x1c27f284915b6260!2s48599%20Gronau%2C%20Germany!5e1!3m2!1sen!2sma!4v1781096513623!5m2!1sen!2sma"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+    </div>
+
+    <a
+        class="location-directions-btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=48599+Gronau,+Germany"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="location_directions">
+        Route planen
+    </a>
+
+</section>
+
+    <!-- FOOTER -->
+   <footer class="footer" id="contact">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <h2>
+                MA Bowl
+            </h2>
+
+            <p data-i18n="footer_desc">
+                Premium Açaí Bowls, zubereitet mit frischen Zutaten und unvergesslichen Aromen.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3 data-i18n="footer_nav">
+                Navigation
+            </h3>
+
+            <a href="#" data-i18n="nav_home">Startseite</a>
+            <a href="#" data-i18n="nav_menu">Menü</a>
+            <a href="#" data-i18n="nav_about">Über uns</a>
+            <a href="#" data-i18n="nav_gallery">Galerie</a>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3 data-i18n="nav_contact">
+                Kontakt
+            </h3>
+
+            <a href="https://www.instagram.com/mabow.l/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.tiktok.com/@maryam.irq1" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="#location" data-i18n="footer_location">Standort</a>
+
+        </div>
+
+        <div class="footer-hours">
+
+            <h3 data-i18n="footer_availability">
+                Verfügbarkeit
+            </h3>
+
+            <p data-i18n="footer_availability_text">Der Verkauf findet nur statt, wenn wir eine Story auf Instagram veröffentlichen. Gibt es keine Story, findet an diesem Tag kein Verkauf statt.</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p data-i18n="footer_copy">
+            © 2026 MA Bowl. Alle Rechte vorbehalten.
+        </p>
+
+    </div>
+
+</footer>
+    <!-- MOBILE BOTTOM TAB BAR (hidden on desktop, shown only under 768px via CSS) -->
+    <svg style="display:none">
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11.5 12 4l8.5 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 10v9.5a1 1 0 0 0 1 1H10v-6h4v6h3.5a1 1 0 0 0 1-1V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3.5 12.5h17a7.5 7 0 0 1-17 0Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 5.5c0 1-1.2 1-1.2 2.3M13 4.5c0 1.2-1.4 1.2-1.4 2.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-gallery" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="1.6" fill="currentColor"/><path d="m5 17 4.5-4.5L13 16l3-3 3 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="8" r="1.1" fill="currentColor"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.1-6.5-11A6.5 6.5 0 0 1 18.5 10c0 4.9-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    </svg>
+
+    <nav class="mobile-tabbar" id="mobileTabbar">
+        <a href="#home" class="tab-btn active" data-tab-target="home">
+            <svg width="21" height="21"><use href="#i-home"/></svg>
+            <span data-i18n="nav_home">Startseite</span>
+        </a>
+        <a href="#products" class="tab-btn" data-tab-target="products">
+            <svg width="21" height="21"><use href="#i-bowl"/></svg>
+            <span data-i18n="nav_menu">Menü</span>
+        </a>
+        <a href="#gallery" class="tab-btn" data-tab-target="gallery">
+            <svg width="21" height="21"><use href="#i-gallery"/></svg>
+            <span data-i18n="nav_gallery">Galerie</span>
+        </a>
+        <a href="#about" class="tab-btn" data-tab-target="about">
+            <svg width="21" height="21"><use href="#i-info"/></svg>
+            <span data-i18n="nav_about">Über uns</span>
+        </a>
+        <a href="#contact" class="tab-btn" data-tab-target="contact">
+            <svg width="21" height="21"><use href="#i-pin"/></svg>
+            <span data-i18n="nav_contact">Kontakt</span>
+        </a>
+    </nav>
+
+</body>
+
+</html>

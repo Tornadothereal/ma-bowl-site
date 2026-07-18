@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr" id="dashHtml">
+<head>
+<meta charset="UTF-8">
+<title>MA Bowl — Dashboard</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <div class="mb-loading" id="mbLoading">Wird geladen…</div>
+
+  <!-- LOGIN -->
+  <div class="mb-login" id="mbLoginScreen" style="display:none;">
+    <div class="mb-login-card">
+      <div class="mb-lang-toggle-login">
+        <button class="mb-lang-pill" data-lang="de">🇩🇪 DE</button>
+        <button class="mb-lang-pill" data-lang="ar">🇸🇦 AR</button>
+      </div>
+      <div class="mb-logo">MA Bowl</div>
+      <div class="mb-login-sub" data-t="loginSubtitle"></div>
+      <div class="mb-field">
+        <label data-t="passwordLabel"></label>
+        <input type="password" id="mbPasswordInput" data-t-ph="passwordPlaceholder">
+      </div>
+      <button class="mb-btn-primary" id="mbLoginBtn" data-t="loginBtn"></button>
+      <div class="mb-error" id="mbLoginError"></div>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div class="mb-app" id="mbApp" style="display:none;">
+    <div class="mb-topbar">
+      <div class="mb-logo">MA Bowl <span style="color:#222; font-weight:500; font-size:.8rem;" data-t="dashboardWord"></span></div>
+      <div class="mb-top-actions">
+        <button class="mb-icon-btn" id="mbLangBtn">🇩🇪 / 🇸🇦</button>
+        <button class="mb-icon-btn logout" id="mbLogoutBtn" data-t="logout"></button>
+      </div>
+    </div>
+
+    <div class="mb-body">
+      <div class="mb-tabs-row" id="mbTabsRow"></div>
+
+      <div class="mb-section-header">
+        <h2 id="mbActiveSectionTitle"></h2>
+        <button class="mb-add-product-btn" id="mbAddProductBtn" data-t="addProductBtn"></button>
+      </div>
+
+      <div class="mb-grid" id="mbGrid"></div>
+    </div>
+  </div>
+
+  <!-- CHOICE MODAL -->
+  <div class="mb-overlay" id="mbChoiceOverlay">
+    <div class="mb-modal">
+      <h3 data-t="chooseTitle"></h3>
+      <p class="mb-modal-sub" data-t="chooseSubtitle"></p>
+      <div class="mb-choice-grid">
+        <div class="mb-choice-card" id="mbChoiceProduct">
+          <span class="mb-choice-emoji">🥣</span>
+          <strong data-t="choiceProduct"></strong>
+          <span data-t="choiceProductDesc"></span>
+        </div>
+        <div class="mb-choice-card" id="mbChoiceSection">
+          <span class="mb-choice-emoji">✨</span>
+          <strong data-t="choiceSection"></strong>
+          <span data-t="choiceSectionDesc"></span>
+        </div>
+      </div>
+      <div class="mb-modal-actions">
+        <button class="mb-btn-outline" id="mbChoiceCancel" data-t="cancel"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEW SECTION MODAL -->
+  <div class="mb-overlay" id="mbSectionOverlay">
+    <div class="mb-modal">
+      <h3 data-t="newSectionTitle"></h3>
+      <div class="mb-field">
+        <label data-t="sectionNameDe"></label>
+        <input type="text" id="mbSectionNameDe" placeholder="z. B. Eis">
+      </div>
+      <div class="mb-field">
+        <label data-t="sectionNameAr"></label>
+        <input type="text" id="mbSectionNameAr" placeholder="مثال: مثلجات">
+      </div>
+      <div class="mb-field">
+        <label data-t="sectionIcon"></label>
+        <input type="text" id="mbSectionIcon" placeholder="🍨" maxlength="4">
+      </div>
+      <div class="mb-error" id="mbSectionError"></div>
+      <div class="mb-modal-actions">
+        <button class="mb-btn-outline" id="mbSectionBack" data-t="back"></button>
+        <button class="mb-btn-primary" id="mbSectionContinue" data-t="continue"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div class="mb-overlay" id="mbProductOverlay">
+    <div class="mb-modal">
+      <h3 id="mbProductModalTitle"></h3>
+      <div style="height:14px;"></div>
+
+      <div class="mb-field" id="mbSectionSelectWrap">
+        <label data-t="section"></label>
+        <select id="mbProductSection"></select>
+      </div>
+
+      <div class="mb-field">
+        <label data-t="image"></label>
+        <div class="mb-upload-box" id="mbUploadBox">
+          <img id="mbImagePreview" style="display:none;">
+          <span id="mbUploadLabel" data-t="uploadImage"></span>
+          <input type="file" accept="image/*" id="mbImageInput">
+        </div>
+      </div>
+
+      <div class="mb-field">
+        <label data-t="nameDe"></label>
+        <input type="text" id="mbProductNameDe">
+      </div>
+      <div class="mb-field">
+        <label data-t="nameAr"></label>
+        <input type="text" id="mbProductNameAr">
+      </div>
+      <div class="mb-field">
+        <label data-t="price"></label>
+        <input type="text" id="mbProductPrice" data-t-ph="pricePlaceholder">
+      </div>
+      <div class="mb-field">
+        <label data-t="descDe"></label>
+        <textarea id="mbProductDescDe" rows="2"></textarea>
+      </div>
+      <div class="mb-field">
+        <label data-t="descAr"></label>
+        <textarea id="mbProductDescAr" rows="2"></textarea>
+      </div>
+
+      <div class="mb-note" data-t="langOtherNote"></div>
+
+      <div class="mb-toggle-row">
+        <span data-t="visible" style="font-size:.85rem; font-weight:600;"></span>
+        <div class="mb-switch on" id="mbVisibleSwitch"></div>
+      </div>
+
+      <div class="mb-error" id="mbProductError"></div>
+
+      <div class="mb-modal-actions">
+        <button class="mb-btn-outline" id="mbProductCancel" data-t="cancel"></button>
+        <button class="mb-btn-primary" id="mbProductSave" data-t="save"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELETE PRODUCT MODAL -->
+  <div class="mb-overlay" id="mbDeleteOverlay">
+    <div class="mb-modal">
+      <h3 class="mb-danger-title" data-t="deleteTitle"></h3>
+      <p class="mb-modal-sub" data-t="deleteText"></p>
+      <div class="mb-modal-actions">
+        <button class="mb-btn-outline" id="mbDeleteCancel" data-t="cancel"></button>
+        <button class="mb-btn-primary" style="background:#c0392b;" id="mbDeleteConfirm" data-t="deleteConfirm"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELETE SECTION MODAL -->
+  <div class="mb-overlay" id="mbDeleteSectionOverlay">
+    <div class="mb-modal">
+      <h3 class="mb-danger-title" data-t="deleteSectionTitle"></h3>
+      <p class="mb-modal-sub" data-t="deleteSectionText"></p>
+      <div class="mb-modal-actions">
+        <button class="mb-btn-outline" id="mbDeleteSectionCancel" data-t="cancel"></button>
+        <button class="mb-btn-primary" style="background:#c0392b;" id="mbDeleteSectionConfirm" data-t="deleteConfirm"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-toast" id="mbToast"></div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
